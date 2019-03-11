@@ -5,7 +5,7 @@ grades = [83,95,91,87,70,0,85,82,100,67,73,77,0]
 decile = lambda grade: grade // 10 * 10
 histogram = Counter(decile(grade) for grade in grades)
 
-plt.bar([x for x in histogram.keys()], # shift each bar to the left by 4 (if using py2.7) x - 4
+plt.bar([x - 4 for x in histogram.keys()], # shift each bar to the left by 4 (if using py2.7) x - 4
         histogram.values(),                # give each bar its correct height
         8)                                 # give each bar a width of 8
 
